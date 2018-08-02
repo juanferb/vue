@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<div id="app">
+		<user-name name="Juan"></user-name>
+		<user-name name="Pepe"></user-name>
+	</div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+		/* Cualquier componente creado con Vue.component() 
+			está registrado globalmente. */	
+        Vue.component(  			// Creación de componente
+			"UserName", 			// 1er parámetro (nombre)
+			{ 						// 2do parámetro 
+				props: ["name"],
+				template: "<p>Hi {{ name }}</p>"
+        	}
+		);
+
+        new Vue({
+            el: '#app'   
+        })
+    </script>
+</body>
+</html>
