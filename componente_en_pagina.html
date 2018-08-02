@@ -2,9 +2,22 @@
 <html>
 
 <body>
+	<div>
+		<h1>Fuera de Vue</h1>
+		msg: {{msg}}
+		<br>
+		Raíz de 16 : {{ Math.sqrt(16)}}
+		<hr>
+	</div>
 	<div id="app">
+		<h1>Dentro de Vue (div id= app)</h1>
+		msg: {{msg}}
+		<br>
+		Raíz de 16 : {{ Math.sqrt(16)}}
+		<br>
 		<user-name name="Juan"></user-name>
 		<user-name name="Pepe"></user-name>
+		<hr>
 	</div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -19,7 +32,10 @@
 		);
 
         new Vue({
-            el: '#app'   
+			el: '#app' ,
+			data: {
+				msg: "Holaa",
+			}			  
         })
     </script>
 </body>
