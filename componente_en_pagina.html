@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<style>
+	.underline { text-decoration: underline; }
+</style>
+
 <body>
 	<div>
 		<h1>Fuera de Vue</h1>
@@ -32,6 +36,9 @@
 				:style es una abreviación de v-bind:style -->
 				<span :style="styling">Texto con estilo usando computed property</span>
 			</li>
+			<li>
+				<span :class="{underline: isUnderlined}">Estilo con condición</span>
+			</li>
 		</ul>
 		<user-name name="Juan"></user-name>
 		<user-name name="Pepe"></user-name>
@@ -55,7 +62,8 @@
 				msg: "Holaa",
 				decoration: 'underline',
 				textDecoration: 'underline',
-				fontWeight: 'bold'
+				fontWeight: 'bold',
+				isUnderlined: true
 			},
 			computed: {
 				styling: function() {
