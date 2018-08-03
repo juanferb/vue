@@ -27,6 +27,11 @@
 				:style es una abreviación de v-bind:style -->
 				<span :style="{'text-decoration': decoration}">Texto con estilo</span>
 			</li>
+			<li>
+				<!-- Añadir estilo con expresión 
+				:style es una abreviación de v-bind:style -->
+				<span :style="styling">Texto con estilo usando computed property</span>
+			</li>
 		</ul>
 		<user-name name="Juan"></user-name>
 		<user-name name="Pepe"></user-name>
@@ -49,7 +54,17 @@
 			data: {
 				msg: "Holaa",
 				decoration: 'underline',
-			}			  
+				textDecoration: 'underline',
+				fontWeight: 'bold'
+			},
+			computed: {
+				styling: function() {
+					return {
+						textDecoration: this.textDecoration,
+						fontWeight: this.fontWeight
+					}
+				}
+			}
         })
     </script>
 </body>
