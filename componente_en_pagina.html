@@ -4,19 +4,30 @@
 <body>
 	<div>
 		<h1>Fuera de Vue</h1>
-		msg: {{msg}}
-		<br>
-		Raíz de 16 : {{ Math.sqrt(16)}}
-		<hr>
+		<ul>
+			<li>msg: {{msg}}</li>
+			<li>Raíz de 16 : {{ Math.sqrt(16)}}</li>
+			<li>
+				<!-- Añadir estilo con expresión-->
+				<span :style="{'text-decoration': decoration}">Texto con estilo</span>
+			</li>
+		</ul>
 	</div>
 	<div id="app">
 		<h1>Dentro de Vue (div id= app)</h1>
-		msg: {{msg}}
-		<br>
-		<!-- Podemos ejecutar sentencias javascript en 
-		 las expresiones de Vue-->
-		Raíz de 16 : {{ Math.sqrt(16)}}
-		<br>
+		<ul>
+			<li>msg: {{msg}}</li>
+			<li>
+				<!-- Podemos ejecutar sentencias javascript en 
+		 			las expresiones de Vue-->
+				Raíz de 16 : {{ Math.sqrt(16)}}
+			</li>
+			<li>
+				<!-- Añadir estilo con expresión 
+				:style es una abreviación de v-bind:style -->
+				<span :style="{'text-decoration': decoration}">Texto con estilo</span>
+			</li>
+		</ul>
 		<user-name name="Juan"></user-name>
 		<user-name name="Pepe"></user-name>
 		<hr>
@@ -37,6 +48,7 @@
 			el: '#app' ,
 			data: {
 				msg: "Holaa",
+				decoration: 'underline',
 			}			  
         })
     </script>
