@@ -3,6 +3,7 @@
 
 <style>
 	.underline { text-decoration: underline; }
+	.weight { font-weight: bold; }
 </style>
 
 <body>
@@ -37,7 +38,12 @@
 				<span :style="styling">Texto con estilo usando computed property</span>
 			</li>
 			<li>
+				<!-- Pasando una condición en el binding -->
 				<span :class="{underline: isUnderlined}">Estilo con condición</span>
+			</li>
+			<li>
+				<!-- Pasando un array en el binding -->
+				<span :class="[decoration, weight]">Estilo pasando un array en el binding</span>
 			</li>
 		</ul>
 		<user-name name="Juan"></user-name>
@@ -63,7 +69,8 @@
 				decoration: 'underline',
 				textDecoration: 'underline',
 				fontWeight: 'bold',
-				isUnderlined: true
+				isUnderlined: true,
+				weight: 'weight'
 			},
 			computed: {
 				styling: function() {
